@@ -3,6 +3,9 @@
 
 参考文章github地址：https://github.com/SilenceHVK/wechatByNode
 
+# v1.0.0 2018.04.25 0:39
+稍微优化了下目录结构，很遗憾忽略表操作并不生效，后续会继续修正
+
 # v1.0.0 2018.04.24
 初步功能：<br>
 * 1.access_token的获取<br>
