@@ -1,8 +1,8 @@
 {
     "token": "weixin",
     "domain": "http://t8.test.drcloud.me",
-    "app_id": "",
-    "app_secret": "",
+    "app_id": "wxb24caf41f1bcb155",
+    "app_secret": "ff97fdb456e99033e09b49f53a4766ce",
     "api_domain": "https://api.weixin.qq.com/",
     "api_url": {
         "access_token_api": "%scgi-bin/token?grant_type=client_credential&appid=%s&secret=%s",
@@ -12,7 +12,7 @@
         "button": [
             {
                 "type": "view",
-                "name": "coder",
+                "name": "进入游戏",
                 "url": "http://t8.test.drcloud.me"
             },
             {

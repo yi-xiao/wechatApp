@@ -1,31 +1,18 @@
 const express = require('express');
 const http = require('http');
-const fs = require('fs');
-const path = require('path');
 const port = '8088';
-const wechat = require('./wechat/wechat');
-const config = require('./config/config.json');
 const app = express();//实例
 const server = http.createServer(app);
+const path = require('path');
+const ejs = require('ejs');
+const routers = require('./routes');
 
-let webchatApp = new wechat(config);
+app.set('views', path.join(__dirname, 'views'));
+app.engine('.html', ejs.__express);//注册模板
+app.set('view engine', 'html');
+app.set('view cache', false);
 
-app.get('/', (req,res,next) => {
-    // res.send('hello World');
-    // webchatApp.auth(req,res);
-    // webchatApp.getAccessToken().then(function (data) {
-        // res.send(data); //返回的token
-        // webchatApp.createMenu(data); //创建菜单
-    // });
-    res.send('hello')
-});
-
-app.post('/', function (req, res) {
-    webchatApp.handleMsg(req, res);
-});
+app.use('/',routers);
 
 server.listen(port);
-// app.listen(8088, () => {
-//    console.log('ok') ;
-// });
 
