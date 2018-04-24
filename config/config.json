@@ -1,0 +1,45 @@
+{
+    "token": "weixin",
+    "domain": "http://t8.test.drcloud.me",
+    "app_id": "",
+    "app_secret": "",
+    "api_domain": "https://api.weixin.qq.com/",
+    "api_url": {
+        "access_token_api": "%scgi-bin/token?grant_type=client_credential&appid=%s&secret=%s",
+        "creatMenu": "%scgi-bin/menu/create?access_token=%s"
+    },
+    "menu": {
+        "button": [
+            {
+                "type": "view",
+                "name": "coder",
+                "url": "http://t8.test.drcloud.me"
+            },
+            {
+                "type": "click",
+                "name": "今日推荐",
+                "key": "today_recommend"
+            },
+            {
+                "name": "更多",
+                "sub_button": [
+                    {
+                        "type": "scancode_waitmsg",
+                        "name": "扫一扫",
+                        "key": "scancode"
+                    },
+                    {
+                        "type": "pic_sysphoto",
+                        "name": "系统拍照",
+                        "key": "photo"
+                    },
+                    {
+                        "type": "location_select",
+                        "name": "获取位置",
+                        "key": "localtion"
+                    }
+                ]
+            }
+        ]
+    }
+}
